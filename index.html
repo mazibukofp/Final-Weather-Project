@@ -7,6 +7,7 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
@@ -30,10 +31,10 @@
 
       <main>
         <div class="Weather-details">
-          <h1>Johannesburg</h1>
+          <h1 id="city">Johannesburg</h1>
           <span class="temperature-details">
             <span class="temp-image">☁️</span>
-            <span class="temp">12</span>
+            <span class="temp" id="temperature">12</span>
             <span class="temp-degrees">℃</span>
           </span>
 
