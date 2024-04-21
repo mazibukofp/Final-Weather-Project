@@ -1,7 +1,14 @@
 function weatherFocast(response) {
+  console.log(response.data);
   let tempElement = document.querySelector("#temperature");
   let temp = Math.round(response.data.temperature.current);
   tempElement.innerHTML = temp;
+  let conditionElement = document.querySelector("#weatherCondition");
+  conditionElement.innerHTML = response.data.condition.description;
+  let humidityElement = document.querySelector("#tempHumidity");
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  let windELement = document.querySelector("#windTemp");
+  windELement.innerHTML = `${response.data.wind.speed}Km/h`;
 }
 
 function searchEngine(city) {
@@ -37,5 +44,9 @@ let days = [
 let day = days[now.getDay()];
 let hours = now.getHours();
 let minutes = now.getMinutes();
+
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 
 paragraph.innerHTML = `${day} ${hours}:${minutes}`;
