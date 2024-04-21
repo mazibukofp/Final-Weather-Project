@@ -19,3 +19,23 @@ function searchButton(event) {
 }
 let searchElement = document.querySelector("#search-input-form");
 searchElement.addEventListener("submit", searchButton);
+
+let paragraph = document.querySelector(".daysAndTime");
+
+let now = new Date();
+
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saurday",
+];
+
+let day = days[now.getDay()];
+let hours = now.getHours();
+let minutes = Math.round(now.getMinutes());
+
+paragraph.innerHTML = `${day} ${hours}:0${minutes}`;
