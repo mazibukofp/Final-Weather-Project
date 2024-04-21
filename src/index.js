@@ -36,6 +36,6 @@ let days = [
 
 let day = days[now.getDay()];
 let hours = now.getHours();
-let minutes = Math.round(now.getMinutes());
+let minutes = now.getMinutes();
 
-paragraph.innerHTML = `${day} ${hours}:0${minutes}`;
+paragraph.innerHTML = `${day} ${hours}:${minutes}`;
