@@ -65,3 +65,20 @@ footer {
   color: rgb(122, 122, 122);
   font-family: inherit;
 }
+
+.weather-forecast-container {
+  margin: 20px 10px;
+}
+
+.temperature-icon {
+  margin: 5px;
+}
+
+.max-temp {
+  font-size: 14px;
+}
+
+.min-temp {
+  font-size: 12px;
+  color: rgb(184, 180, 180);
+}
