@@ -1,5 +1,4 @@
-function weatherFocast(response) {
-  console.log(response.data);
+function weatherForecast(response) {
   let tempElement = document.querySelector("#temperature");
   let temp = Math.round(response.data.temperature.current);
   tempElement.innerHTML = temp;
@@ -12,13 +11,15 @@ function weatherFocast(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   let windELement = document.querySelector("#windTemp");
   windELement.innerHTML = `${response.data.wind.speed}Km/h`;
+
+  getWeatherForecast(response.data.city);
 }
 
 function searchEngine(city) {
   let apiKey = "64ff4bb3f1cb03t54443a9aod8ab5582";
   let weatherUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
-  axios.get(weatherUrl).then(weatherFocast);
+  axios.get(weatherUrl).then(weatherForecast);
 }
 function searchButton(event) {
   event.preventDefault();
@@ -54,7 +55,14 @@ if (minutes < 10) {
 
 paragraph.innerHTML = `${day} ${hours}:${minutes}`;
 
-function dailyForecast() {
+function getWeatherForecast(city) {
+  let api = "64ff4bb3f1cb03t54443a9aod8ab5582";
+  let weatherForecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${api}&units=metrics`;
+  console.log(weatherForecastUrl);
+  axios.get(weatherForecastUrl).then(dailyForecast);
+}
+
+function dailyForecast(response) {
   let days = ["Mon", "Tue", "Wed", "Thur", "Fri"];
   let forecastHtml = "";
 
