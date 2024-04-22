@@ -3,6 +3,9 @@ function weatherFocast(response) {
   let tempElement = document.querySelector("#temperature");
   let temp = Math.round(response.data.temperature.current);
   tempElement.innerHTML = temp;
+  let icon = document.querySelector(".temp-image");
+  let iconElement = `<img src ="${response.data.condition.icon_url}"/>`;
+  icon.innerHTML = iconElement;
   let conditionElement = document.querySelector("#weatherCondition");
   conditionElement.innerHTML = response.data.condition.description;
   let humidityElement = document.querySelector("#tempHumidity");
