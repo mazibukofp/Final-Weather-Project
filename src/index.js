@@ -53,3 +53,29 @@ if (minutes < 10) {
 }
 
 paragraph.innerHTML = `${day} ${hours}:${minutes}`;
+
+function dailyForecast() {
+  let days = ["Mon", "Tue", "Wed", "Thur", "Fri"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="weather-forecast">
+          <div class="row">
+            <div class="col-2">
+              <div class="daily-weather">${day}</div>
+              ☁️
+              <div>
+                <span class="max-temp">18°</span>
+                <span class="min-temp">13°</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+  });
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+dailyForecast();
