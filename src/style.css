@@ -8,13 +8,14 @@ h1 {
 }
 
 p {
-  color: rgb(184, 180, 180);
+  color: rgb(112, 112, 112);
   font-size: 12px;
   display: block;
   margin: 0 auto;
 }
+
 strong {
-  color: rgb(232, 146, 146);
+  color: rgb(247, 130, 130);
 }
 a {
   color: rgb(107, 107, 187);
@@ -22,7 +23,7 @@ a {
 .Weather-App {
   max-width: 600px;
   border-radius: 14px;
-  background-color: white;
+  background-color: skyblue;
   padding: 30px;
   margin: 0 auto;
 }
@@ -43,6 +44,13 @@ a {
   border-radius: 5px;
 }
 
+.submit-button:hover {
+  transform: all 200ms ease-in-out;
+  background-color: rgb(88, 173, 243);
+  color: grey;
+  cursor: pointer;
+}
+
 .temperature-details {
   display: flex;
   align-items: center;
@@ -51,6 +59,11 @@ a {
   font-family: "Merriweather", serif;
   margin-bottom: 20px;
 }
+
+.temp {
+  font-weight: bold;
+}
+
 .temp-image {
   font-size: 30px;
 }
@@ -73,11 +86,32 @@ footer {
   justify-content: space-around;
 }
 
+.col-2 {
+  padding: 20px 10px;
+  border-radius: 40px;
+}
+
+.col-2:hover {
+  transform: all 200ms ease-in-out;
+  background-color: rgb(238, 237, 237);
+}
+
+.daily-weather {
+  color: rgb(112, 112, 112);
+  font-weight: bold;
+}
+
+.weather-icon {
+  width: 50px;
+  height: 40px;
+}
+
 .max-temp {
   font-size: 14px;
+  font-weight: bold;
 }
 
 .min-temp {
   font-size: 12px;
-  color: rgb(184, 180, 180);
+  color: rgb(112, 112, 112);
 }
