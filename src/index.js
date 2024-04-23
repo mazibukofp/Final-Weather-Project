@@ -6,12 +6,15 @@ function weatherForecast(response) {
   let conditionElement = document.querySelector("#weatherCondition");
   let humidityElement = document.querySelector("#tempHumidity");
   let windELement = document.querySelector("#windTemp");
+  let currentTime = formatDay(new Date());
+  let forecastElement = document.querySelector("#currentTime");
 
   tempElement.innerHTML = temp;
   icon.innerHTML = iconElement;
   conditionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windELement.innerHTML = `${response.data.wind.speed}Km/h`;
+  forecastElement = currentTime;
 
   getWeatherForecast(response.data.city);
 }
@@ -102,5 +105,6 @@ function getWeatherForecast(city) {
   let weatherForecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
 
   axios.get(weatherForecastUrl).then(dailyForecast);
-  console.log(weatherForecastUrl);
 }
+
+searchEngine("Paris");
